@@ -1,3 +1,22 @@
 body, html, #root, .App {
   height: 100%;
 }
+
+
+.sign-out {
+  right: 15px;
+}
+
+.home {
+  right: 60px;
+}
+
+.back {
+  left: 15px;
+}
+
+.home, .sign-out, .back {
+  position: absolute;
+  font-size: 32px;
+  top: 10px;
+}

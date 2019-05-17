@@ -1,6 +1,8 @@
 import React from 'react';
 import './_styles.scss';
 import img from './img.png';
+import data from '../../data.json';
+import {SHA256} from 'crypto-js';
 
 
 class Login extends React.Component {
@@ -25,22 +27,24 @@ class Login extends React.Component {
     }
 
     submitForm(e) {
-        //console.log(this.state.pwd);
         e.preventDefault();
         if (this.state.pwd === '') {
             this.setState({passwordError: true});
             return;
         }
 
-        if (this.props.appFunctions.logIn(this.props.appFunctions.hashString(this.state.pwd))) {
-            if ( this.state.remember ) {
-                localStorage.setItem("pass", this.props.appFunctions.hashString(this.state.pwd));
+        this.props.appFunctions.logIn( SHA256(this.state.pwd) ).then((res) => {
+            if (res.status === 'ok') {
+                if ( this.state.remember ) {
+                    localStorage.setItem("pass", res.pass);
+                }
+            } else {
+                this.setState({passwordError: true});   
             }
-        } else {
-            this.setState({passwordError: true});
-        }
-        
+        });
+    
     }
+        
 
     render() {
         return (

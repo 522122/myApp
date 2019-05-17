@@ -2,15 +2,18 @@
     "dashboardItems": [
         {
             "title": "Car expenses",
-            "icon": "fas fa-car"
+            "icon": "fas fa-car",
+            "path": "/car-dashboard"
         },
         {
             "title": "Investments",
-            "icon": "fab fa-bitcoin"
+            "icon": "fab fa-bitcoin",
+            "path": "/investments-dashboard"
         },
         {
             "title": "Passwords",
-            "icon": "fas fa-user-secret"
+            "icon": "fas fa-user-secret",
+            "path": "/passwords"
         }
     ]
 }

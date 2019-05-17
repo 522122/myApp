@@ -10,6 +10,8 @@
 
     .card {
         margin: 7.5px;
+        color: $body-text !important;
+        text-decoration: none !important;
         &:hover {
             background-color: $light-gray;
         }

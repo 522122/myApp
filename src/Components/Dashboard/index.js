@@ -1,29 +1,27 @@
 import React from 'react';
 import './_styles.scss';
 import data from './data.json';
-import Login from '../Login';
+import { Link } from "react-router-dom";
+
 
 class Dashboard extends React.Component {
     constructor(props) {
         super(props);
     }
 
-    render() {
 
-        if (!this.props.appState.loggedIn) {
-            return <Login appFunctions={this.props.appFunctions} />
-        }
+    render() {
 
         return (
             
             <div className="dashboard">
                 {data.dashboardItems.map((item, i) => (
-                    <div className="card" key={i}>
-                        <a className="card-body">
+                    <Link className="card" key={i} to={item.path}>
+                        <div className="card-body">
                             <i className={item.icon}></i>
                             <h3>{item.title}</h3>
-                        </a>
-                    </div>
+                        </div>
+                    </Link>
                 ))}
             </div>
         )
