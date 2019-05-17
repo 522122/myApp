@@ -1,0 +1,19 @@
+@import "../../_vars";
+
+.login {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .card {
+        width: 300px;
+        margin: 15px;
+        .card-img-top {
+            max-width: 175px;
+            margin: auto;
+            margin-top: 15px;
+        }
+    }
+}

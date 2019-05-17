@@ -1,0 +1,16 @@
+{
+    "dashboardItems": [
+        {
+            "title": "Car expenses",
+            "icon": "fas fa-car"
+        },
+        {
+            "title": "Investments",
+            "icon": "fab fa-bitcoin"
+        },
+        {
+            "title": "Passwords",
+            "icon": "fas fa-user-secret"
+        }
+    ]
+}
