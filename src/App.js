@@ -43,12 +43,13 @@ class App extends React.Component {
     this.appFunctions.logIn = (hash) => {
       
       var params = new URLSearchParams();
-      params.append('hash', hash);
-      return Axios.post(data.api+'login.php', params).then((res) => {
+      params.append('username', data.username);
+      params.append('password_hash', hash);
+      return Axios.post('/user/login', params).then((res) => {
         if(res.data.status === 'ok') {
           this.setState({loggedIn: true});
         }
-        return res.data
+        return res.data;
       });
 
     }
